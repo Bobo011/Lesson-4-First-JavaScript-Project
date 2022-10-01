@@ -2,6 +2,7 @@
 //Global variables for computer and player scores
 let COMP_SCORE = 0;
 let PLAYER_SCORE = 0;
+let DRAWS=0;
 
 // a function that will choose randomly
 // between Rock, Paper and Scissors
@@ -47,6 +48,7 @@ function playRound(playerSelection, computerSelection) {
         return "You Won, Rock beats Scissors!";
         
     }else if(play ==comp){
+        DRAWS++;
         return 'Draw'
     }
     
@@ -61,12 +63,12 @@ function playRound(playerSelection, computerSelection) {
     }
     //if computers score is higher than the players, computer wins and visa versa
     if (COMP_SCORE > PLAYER_SCORE){
-alert(`C ${COMP_SCORE}, P ${PLAYER_SCORE}, You Lose`);
+alert(`C ${COMP_SCORE}, P ${PLAYER_SCORE},D ${DRAWS}, You Lose`);
 
     }else if(PLAYER_SCORE > COMP_SCORE){
-        alert(`C ${COMP_SCORE}, P ${PLAYER_SCORE}, You Win`);
+        alert(`C ${COMP_SCORE}, P ${PLAYER_SCORE}, D ${DRAWS}, You Win`);
     }else {
-        alert(`C ${COMP_SCORE}, P ${PLAYER_SCORE}, Draw`);
+        alert(`C ${COMP_SCORE}, P ${PLAYER_SCORE}, D ${DRAWS}, Draw`);
     }
  }
 
@@ -78,10 +80,10 @@ alert(`C ${COMP_SCORE}, P ${PLAYER_SCORE}, You Lose`);
   );
 }
    
-  let playerSelection = getComputerChoice();
-  let computerSelection = getComputerChoice();
-  console.log(playerSelection);
-  console.log(computerSelection);
+//   let playerSelection = getComputerChoice();
+//   let computerSelection = getComputerChoice();
+//   console.log(playerSelection);
+//   console.log(computerSelection);
   console.log(game());
   console.log(`C ${COMP_SCORE}, P ${PLAYER_SCORE}`);
 
